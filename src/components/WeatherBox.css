@@ -1,11 +1,18 @@
 .weather-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    border: 1px solid green;
+    width: 180px;
+    height: 180px;
+    border-radius: 30%;
+    background-color: rgba(14, 17, 23, 0.3);
 }
 
+.weather-box > img {
+    width: 80px;
+    height: 80px;
+}
 
 .weather-box > h1 {
     font-size: 20px;
