@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './images/logo.svg';
 import './App.css';
+import MainWeatherWindow from './components/MainWeatherWindow'
+import CityInput from './components/CityInput'
+import WeatherBox from './components/WeatherBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    city: 'city name'
+  }
+
+  setCity = (e) => {
+    this.setState({ city: e.target.value });
+
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <MainWeatherWindow test={this.state.city}>
+            <CityInput setCity={this.setCity.bind(this)}/>
+
+            <ul className='weather-box-list'>
+              <li><WeatherBox /></li>
+              <li><WeatherBox /></li>
+              <li><WeatherBox /></li>
+              <li><WeatherBox /></li>
+              <li><WeatherBox /></li>
+            </ul>
+          </MainWeatherWindow>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

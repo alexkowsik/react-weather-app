@@ -2,13 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-  user-select: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,15 +13,16 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-box-list {
+  width: 400px;
+  position: relative;
+  top: 100px;
+  border: 1px solid red;  
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-box-list > li {
+  list-style-type: none;
 }

@@ -1,0 +1,10 @@
+.main {
+    height: 400px;
+    width: 800px;
+    border: 1px solid #42464e;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
