@@ -2,10 +2,8 @@ import React from 'react';
 import './CityInput.css';
 
 export default class CityInput extends React.Component {
-    state = {
-        // only for styling purposes
-        isCitySet: false
-    }
+
+    
 
     render(props) {
         const onKlickHandler = (e) => {
@@ -26,9 +24,20 @@ export default class CityInput extends React.Component {
             }
         }
 
+        const style = {
+            top: this.props.city ? '-400px' : '50px',
+            width: '600px',
+            display: 'inline-block',
+            padding: '15px 10px',
+            lineHeight: '120%',
+            position: 'relative',
+            borderRadius: '20px',
+            outline: 'none'
+        }
+    
         return(
             <input className='city-input'
-            style={{ top: this.props.city ? '-400px' : '78px' }}
+            style={style}
             type='text' 
             placeholder='Enter a City...' 
             onKeyPress={onKlickHandler}/>

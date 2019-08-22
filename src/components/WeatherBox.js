@@ -1,12 +1,12 @@
 import React from 'react';
 import './WeatherBox.css'
-import sun from './sun.svg'
+import sun from '../images/sun.svg'
 
 export default class WeatherBox extends React.Component {
-    render() {
+    render(props) {
         return(
             <div className='weather-box'>
-                <h1>Saturday</h1>
+                <h1>{this.props.day}</h1>
                 <img src={sun} alt='sun' />
                 <span className='temp'>23°C</span>
             </div>

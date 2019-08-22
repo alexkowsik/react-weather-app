@@ -9,13 +9,14 @@ export default class MainWeatherWindow extends React.Component {
                 <div className='inner-main'>
                     <img src={sun} 
                         alt='sun' 
-                        style={{ display: this.props.city ? 'block' : 'none' }}/>
+                        style={{ visibility: this.props.city ? 'visible' : 'hidden' }} />
 
                     <div className='today'
-                        style={{ display: this.props.city ? 'flex' : 'none' }}>
+                        style={{ visibility: this.props.city ? 'visible' : 'hidden' }}>
+                        <span>Today</span>
                         <h1>{this.props.city}</h1>
                         <p>27°C</p>
-                        <p>Niederschlag: 30%</p>
+                        <p>Rain: 30%</p>
                     </div>
                 </div>
                 {this.props.children}

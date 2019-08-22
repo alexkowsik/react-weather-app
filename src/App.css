@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: black;
 }
 
 .App {
@@ -9,7 +10,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  background-image: url('./images/background.jpg');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center bottom;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,17 +22,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.weather-box-list {
-  width: 1100px;
-  position: relative;
-  top: 60px;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-}
-
-.weather-box-list > li {
-  list-style-type: none;
 }

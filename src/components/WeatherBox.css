@@ -1,19 +1,35 @@
+.weather-box-list {
+    width: 850px;
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
+  
+.weather-box-list > li {
+    list-style-type: none;
+}
+
 .weather-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 180px;
     height: 180px;
     border-radius: 30%;
-    background-color: rgba(14, 17, 23, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 0px 10px silver;
+    padding-bottom: 10px;
 }
 
 .weather-box > img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
 }
 
 .weather-box > h1 {
+    margin-top: 15px;
     font-size: 20px;
 }

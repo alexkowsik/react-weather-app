@@ -6,11 +6,22 @@ import WeatherBox from './components/WeatherBox';
 
 class App extends React.Component {
   state = {
-    city: undefined
+    city: undefined,
+
+    // data: day, weather, avg-temp, rain
+    data_day1: [],
+    data_day2: [],
+    data_day3: [],
+    data_day4: [],
+    data_day5: []
   }
 
   setCity = (e) => {
     this.setState({ city: e.target.value });
+    this.getWeather();
+  }
+
+  getWeather = () => {
 
   }
 
@@ -24,12 +35,11 @@ class App extends React.Component {
             setCity={this.setCity.bind(this)}/>
 
             <ul className='weather-box-list'
-                style={{ display: this.state.city ? 'flex' : 'none' }}>
-              <li><WeatherBox /></li>
-              <li><WeatherBox /></li>
-              <li><WeatherBox /></li>
-              <li><WeatherBox /></li>
-              <li><WeatherBox /></li>
+                style={{ visibility: this.state.city ? 'visible' : 'hidden' }}>
+              <li><WeatherBox day='Tomorrow'/></li>
+              <li><WeatherBox day='Tomorrow 2'/></li>
+              <li><WeatherBox day='Tomorrow 3'/></li>
+              <li><WeatherBox day='Tomorrow 4'/></li>
             </ul>
 
           </MainWeatherWindow>
