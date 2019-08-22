@@ -6,21 +6,22 @@ export default class CityInput extends React.Component {
     
 
     render(props) {
-        const onKlickHandler = (e) => {
+        const onKlickHandler = async e => {
+            e.persist();
             const eventKey = e.which ? e.which : e.keyCode;
+            const city = e.target.value;
 
             // check if input contains only letters after Enter was pressed
             if (eventKey === 13) {
-                if (/^[a-zA-Z]+$/.test(e.target.value)) {
-                    this.props.setCity(e);
-                    this.setState({ isCitySet: true })
-                    e.target.value = '';
-                    e.target.placeholder = 'Enter a City...';
+                if (/^[a-zA-ZäöüÄÖÜß ]+$/.test(city)) {
+                    if (await this.props.makeApiCall(city))
+                        e.target.placeholder = 'Enter a City...';
+                    else
+                        e.target.placeholder = 'City was not found, try again...';
                 }
-                else {
-                    e.target.value = '';
-                    e.target.placeholder = 'Please enter a valid city name...';
-                }        
+                else
+                    e.target.placeholder = 'Please enter a valid city name...'; 
+                e.target.value = '';
             }
         }
 

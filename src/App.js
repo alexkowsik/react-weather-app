@@ -16,14 +16,23 @@ class App extends React.Component {
     data_day5: []
   }
 
-  setCity = (e) => {
-    this.setState({ city: e.target.value });
-    this.getWeather();
+  updateState = city => {
+    this.setState({ city: city });
+    console.log(this.state.city);
   }
 
-  getWeather = () => {
+  makeApiCall = async city => {
+    const api_data = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`).then((resp) => resp.json());
+    
+    if (api_data.cod === '200') {
+      await this.updateState(city);
 
-  }
+      console.log(api_data);
+      return true;
+    }
+    else
+      return false;
+  } 
 
   render() {
     return (
@@ -32,7 +41,7 @@ class App extends React.Component {
           <MainWeatherWindow city={this.state.city}>
 
             <CityInput city={this.state.city}
-            setCity={this.setCity.bind(this)}/>
+            makeApiCall={this.makeApiCall.bind(this)} />
 
             <ul className='weather-box-list'
                 style={{ visibility: this.state.city ? 'visible' : 'hidden' }}>

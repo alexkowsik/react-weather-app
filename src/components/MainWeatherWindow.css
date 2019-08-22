@@ -1,6 +1,6 @@
 .main {
     height: 480px;
-    width: 900px;
+    width: 980px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -20,15 +20,14 @@
 
 .inner-main > img {
     position: relative;
-    left: -100px;
+    left: -80px;
     top: 90px;
     width: 300px;
 }
 
 .today {
     position: relative;
-    width: 250px;
-    right: 30px;
+    width: 350px;
     top: 90px;
     display: flex;
     flex-direction: column;
