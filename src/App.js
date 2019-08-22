@@ -4,6 +4,7 @@ import MainWeatherWindow from './components/MainWeatherWindow'
 import CityInput from './components/CityInput'
 import WeatherBox from './components/WeatherBox';
 
+
 class App extends React.Component {
   state = {
     city: undefined,
@@ -32,8 +33,6 @@ class App extends React.Component {
       city: city,
       days: days 
     });
-
-    console.log(this.state.city, this.state.days);
   }
 
   // tries to make an API call with the given city name and triggers state update
@@ -41,7 +40,6 @@ class App extends React.Component {
     const api_data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`).then((resp) => resp.json());
 
     if (api_data.cod === '200') {
-      console.log(api_data);
       await this.updateState(api_data);
       return true;
     }
@@ -66,7 +64,6 @@ class App extends React.Component {
       tmp = data.list[index].dt_txt.slice(8, 10);
     }
 
-    console.log(dayIndices);
     return dayIndices;
   }
 

@@ -2,9 +2,6 @@ import React from 'react';
 import './CityInput.css';
 
 export default class CityInput extends React.Component {
-
-    
-
     render(props) {
         const onKlickHandler = async e => {
             e.persist();
