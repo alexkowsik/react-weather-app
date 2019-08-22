@@ -22,8 +22,9 @@ class App extends React.Component {
   }
 
   makeApiCall = async city => {
-    const api_data = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`).then((resp) => resp.json());
-    
+    //const api_data = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`).then((resp) => resp.json());
+    const api_data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`).then((resp) => resp.json());
+
     if (api_data.cod === '200') {
       await this.updateState(city);
       console.log(api_data);
