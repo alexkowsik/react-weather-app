@@ -1,6 +1,5 @@
 import React from 'react';
 import './WeatherBox.css'
-import sun from '../images/01d.svg'
 
 export default class WeatherBox extends React.Component {
 
@@ -24,7 +23,8 @@ export default class WeatherBox extends React.Component {
         return(
             <div className='weather-box'>
                 <h1>{this.props.date ? this.getDay(this.props.date) : ''}</h1>
-                <img src={sun} alt='sun' />
+                <img src={this.props.icon ? require(`../images/${this.props.icon}.svg`) : require('../images/01d.svg')}
+                     alt='sun' />
                 <span className='temp'>{Math.round(this.props.temp - 273.15)}°C</span>
             </div>
         );

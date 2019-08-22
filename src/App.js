@@ -42,7 +42,7 @@ class App extends React.Component {
 
     if (api_data.cod === '200') {
       await this.updateState(api_data);
-      console.log(api_data);
+      //console.log(api_data);
       return true;
     }
     else
@@ -50,7 +50,7 @@ class App extends React.Component {
   } 
 
   // returns array with Indices of the next five days in the list
-  // from the API data
+  // from the API data (every day at 12:00 pm)
   getDayIndices = (data) => {
     let dayIndices = [];
     dayIndices.push(0);
@@ -59,7 +59,8 @@ class App extends React.Component {
     let tmp = data.list[index].dt_txt.slice(8, 10);
     
     for (let i = 0; i < 5; i++) {
-      while (tmp === data.list[index].dt_txt.slice(8, 10)) {
+      while ((tmp === data.list[index].dt_txt.slice(8, 10)) ||
+            (data.list[index].dt_txt.slice(11, 13) !== '12')) {
         index++;
       }
       dayIndices.push(index);
