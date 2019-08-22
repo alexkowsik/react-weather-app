@@ -1,4 +1,6 @@
 .main {
+    position: relative;
+    top: -25px;
     height: 480px;
     width: 980px;
     border-radius: 30px;
@@ -16,6 +18,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inner-main p {
+    padding: 0px 0px 5px 0px;
 }
 
 .inner-main > img {

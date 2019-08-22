@@ -14,6 +14,8 @@ export default class CityInput extends React.Component {
             // check if input contains only letters after Enter was pressed
             if (eventKey === 13) {
                 if (/^[a-zA-ZäöüÄÖÜß ]+$/.test(city)) {
+                    e.target.classList.add('loading');
+
                     if (await this.props.makeApiCall(city))
                         e.target.placeholder = 'Enter a City...';
                     else
@@ -21,19 +23,21 @@ export default class CityInput extends React.Component {
                 }
                 else
                     e.target.placeholder = 'Please enter a valid city name...'; 
+                e.target.classList.remove('loading');
                 e.target.value = '';
             }
         }
 
         const style = {
-            top: this.props.city ? '-400px' : '50px',
+            top: this.props.city ? '-380px' : '50px',
             width: '600px',
             display: 'inline-block',
-            padding: '15px 10px',
+            padding: '10px 0px 10px 30px',
             lineHeight: '120%',
             position: 'relative',
             borderRadius: '20px',
-            outline: 'none'
+            outline: 'none',
+            fontSize: '20px'
         }
     
         return(
