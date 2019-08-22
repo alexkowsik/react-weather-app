@@ -1,6 +1,6 @@
 import React from 'react';
 import './WeatherBox.css'
-import sun from '../images/sun.svg'
+import sun from '../images/800.svg'
 
 export default class WeatherBox extends React.Component {
     render(props) {

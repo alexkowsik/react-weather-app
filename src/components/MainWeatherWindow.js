@@ -1,6 +1,6 @@
 import React from 'react';
 import './MainWeatherWindow.css';
-import sun from '../images/sun.svg';
+import sun from '../images/800.svg';
 
 export default class MainWeatherWindow extends React.Component {
     render(props) {
@@ -15,7 +15,7 @@ export default class MainWeatherWindow extends React.Component {
                         style={{ visibility: this.props.city ? 'visible' : 'hidden' }}>
                         <span>Today</span>
                         <h1>{this.props.city}</h1>
-                        <p>27°C</p>
+                        <p>Temperature: 27°C</p>
                         <p>Rain: 30%</p>
                     </div>
                 </div>
