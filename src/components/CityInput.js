@@ -16,14 +16,14 @@ export default class CityInput extends React.Component {
                     if (await this.props.makeApiCall(city))
                         e.target.placeholder = 'Enter a City...';
                     else
-                        e.target.placeholder = 'City was not found, try again...';
-                }
-                else
-                    e.target.placeholder = 'Please enter a valid city name...'; 
+                        e.target.placeholder =
+                            'City was not found, try again...';
+                } else
+                    e.target.placeholder = 'Please enter a valid city name...';
                 e.target.classList.remove('loading');
                 e.target.value = '';
             }
-        }
+        };
 
         const style = {
             top: this.props.city ? '-380px' : '50px',
@@ -35,14 +35,16 @@ export default class CityInput extends React.Component {
             borderRadius: '20px',
             outline: 'none',
             fontSize: '20px'
-        }
-    
-        return(
-            <input className='city-input'
-            style={style}
-            type='text' 
-            placeholder='Enter a City...' 
-            onKeyPress={onKlickHandler}/>
+        };
+
+        return (
+            <input
+                className='city-input'
+                style={style}
+                type='text'
+                placeholder='Enter a City...'
+                onKeyPress={onKlickHandler}
+            />
         );
     }
 }
