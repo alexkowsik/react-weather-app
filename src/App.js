@@ -32,6 +32,8 @@ class App extends React.Component {
             city: city,
             days: days
         });
+
+        console.log(this.state);
     };
 
     // tries to make an API call with the given city name and triggers state update
@@ -42,7 +44,7 @@ class App extends React.Component {
 
         if (api_data.cod === '200') {
             await this.updateState(api_data);
-            //console.log(api_data);
+            console.log(api_data);
             return true;
         } else return false;
     };
@@ -57,7 +59,10 @@ class App extends React.Component {
         let tmp = data.list[index].dt_txt.slice(8, 10);
 
         for (let i = 0; i < 4; i++) {
-            while (tmp === data.list[index].dt_txt.slice(8, 10)) {
+            while (
+                tmp === data.list[index].dt_txt.slice(8, 10) ||
+                data.list[index].dt_txt.slice(11, 13) !== '15'
+            ) {
                 index++;
             }
             dayIndices.push(index);
@@ -71,10 +76,7 @@ class App extends React.Component {
         return (
             <div className='App'>
                 <header className='App-header'>
-                    <MainWeatherWindow
-                        data={this.state.days[0]}
-                        city={this.state.city}
-                    >
+                    <MainWeatherWindow data={this.state.days[0]} city={this.state.city}>
                         <CityInput
                             city={this.state.city}
                             makeApiCall={this.makeApiCall.bind(this)}
@@ -83,9 +85,7 @@ class App extends React.Component {
                         <ul
                             className='weather-box-list'
                             style={{
-                                visibility: this.state.city
-                                    ? 'visible'
-                                    : 'hidden'
+                                visibility: this.state.city ? 'visible' : 'hidden'
                             }}
                         >
                             <li>
