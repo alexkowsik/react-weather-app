@@ -68,7 +68,6 @@ class App extends React.Component {
             dayIndices.push(index);
             tmp = data.list[index].dt_txt.slice(8, 10);
         }
-
         return dayIndices;
     };
 

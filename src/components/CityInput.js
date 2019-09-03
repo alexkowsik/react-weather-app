@@ -15,18 +15,15 @@ export default class CityInput extends React.Component {
 
                     if (await this.props.makeApiCall(city))
                         e.target.placeholder = 'Enter a City...';
-                    else
-                        e.target.placeholder =
-                            'City was not found, try again...';
-                } else
-                    e.target.placeholder = 'Please enter a valid city name...';
+                    else e.target.placeholder = 'City was not found, try again...';
+                } else e.target.placeholder = 'Please enter a valid city name...';
                 e.target.classList.remove('loading');
                 e.target.value = '';
             }
         };
 
         const style = {
-            top: this.props.city ? '-380px' : '50px',
+            top: this.props.city ? '-380px' : '80px',
             width: '600px',
             display: 'inline-block',
             padding: '10px 0px 10px 30px',
@@ -34,7 +31,8 @@ export default class CityInput extends React.Component {
             position: 'relative',
             borderRadius: '20px',
             outline: 'none',
-            fontSize: '20px'
+            fontSize: '20px',
+            transition: 'all 0.5s ease-out'
         };
 
         return (

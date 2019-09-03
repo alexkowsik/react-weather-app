@@ -18,10 +18,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .inner-main p {
     padding: 0px 0px 5px 0px;
+    position: relative;
+    transition: all 0.5s ease-out;
 }
 
 .inner-main > img {
@@ -29,6 +32,7 @@
     left: -80px;
     top: 90px;
     width: 300px;
+    transition: visibility 2s ease-out;
 }
 
 .today {
@@ -43,4 +47,22 @@
 
 .today > h1 {
     margin-bottom: 15px;
+}
+
+.title {
+    position: absolute;
+    color: #3c8acf;
+    font-size: 5rem;
+    width: 1980px;
+    top: 150px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

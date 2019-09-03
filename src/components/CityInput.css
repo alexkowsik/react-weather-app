@@ -1,9 +1,3 @@
-.city-input {
-    width: 600px;
-    height: 140px;
-    position: relative;
-}
-
 .loading {
     background-color: #ffffff;
     background-image: url('../images/loading.gif');
