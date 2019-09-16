@@ -1,68 +1,68 @@
 .main {
-    position: relative;
-    top: -25px;
-    height: 480px;
-    width: 980px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 10px silver;
+  position: relative;
+  top: -25px;
+  height: 480px;
+  width: 980px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 10px silver;
 }
 
 .inner-main {
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .inner-main p {
-    padding: 0px 0px 5px 0px;
-    position: relative;
-    transition: all 0.5s ease-out;
+  padding: 0px 0px 5px 0px;
+  position: relative;
+  transition: all 0.5s ease-out;
 }
 
 .inner-main > img {
-    position: relative;
-    left: -80px;
-    top: 90px;
-    width: 300px;
-    transition: visibility 2s ease-out;
+  position: relative;
+  left: -80px;
+  top: 90px;
+  width: 300px;
+  transition: visibility 2s ease-out;
 }
 
 .today {
-    position: relative;
-    width: 350px;
-    top: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+  position: relative;
+  width: 350px;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .today > h1 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .title {
-    position: absolute;
-    color: #3c8acf;
-    font-size: 5rem;
-    width: 1980px;
-    top: 150px;
+  position: absolute;
+  color: #3c8acf;
+  font-size: 5rem;
+  width: 1980px;
+  top: 150px;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }

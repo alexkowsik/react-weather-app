@@ -1,7 +1,7 @@
 .loading {
-    background-color: #ffffff;
-    background-image: url('../images/loading.gif');
-    background-size: 25px 25px;
-    background-position: 97% center;
-    background-repeat: no-repeat;
+  background-color: #ffffff;
+  background-image: url('../images/loading.gif');
+  background-size: 25px 25px;
+  background-position: 97% center;
+  background-repeat: no-repeat;
 }
