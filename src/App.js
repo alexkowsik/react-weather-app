@@ -32,8 +32,6 @@ class App extends React.Component {
       city: city,
       days: days
     });
-
-    console.log(this.state);
   };
 
   // tries to make an API call with the given city name and triggers state update
@@ -44,7 +42,6 @@ class App extends React.Component {
 
     if (api_data.cod === '200') {
       await this.updateState(api_data);
-      console.log(api_data);
       return true;
     } else return false;
   };
@@ -72,31 +69,22 @@ class App extends React.Component {
   };
 
   render() {
+    const WeatherBoxes = () => {
+      const weatherBoxes = this.state.days.slice(1).map(day => (
+        <li>
+          <WeatherBox {...day} />
+        </li>
+      ));
+
+      return <ul className='weather-box-list'>{weatherBoxes}</ul>;
+    };
+
     return (
       <div className='App'>
         <header className='App-header'>
           <MainWeatherWindow data={this.state.days[0]} city={this.state.city}>
             <CityInput city={this.state.city} makeApiCall={this.makeApiCall.bind(this)} />
-
-            <ul
-              className='weather-box-list'
-              style={{
-                visibility: this.state.city ? 'visible' : 'hidden'
-              }}
-            >
-              <li>
-                <WeatherBox {...this.state.days[1]} />
-              </li>
-              <li>
-                <WeatherBox {...this.state.days[2]} />
-              </li>
-              <li>
-                <WeatherBox {...this.state.days[3]} />
-              </li>
-              <li>
-                <WeatherBox {...this.state.days[4]} />
-              </li>
-            </ul>
+            <WeatherBoxes />
           </MainWeatherWindow>
         </header>
       </div>
